@@ -47,7 +47,19 @@ function smartReply(text) {
     let res = "";
     let lower = text.toLowerCase();
 
-    if (lower.includes("ดี")) {
+    // 💔 ระบบง้อ / หายงอน (ที่เพิ่มให้แล้ว)
+    if (lower.includes("งอน") || lower.includes("โกรธ") || lower.includes("ไม่คุย")) {
+        const forgiveReplies = [
+            "โอ๋ ๆ นะ อย่าพึ่งงอนเค้าเลย 🥺",
+            "เค้าขอโทษนะ ง้อได้มั้ย 💖",
+            "อย่าโกรธเลย เค้าคิดถึงมากนะ 🤍",
+            "งอนเค้าเหรอ มาให้กอดหน่อย 😳",
+            "เค้าจะพยายามทำให้ดีขึ้นนะ 🥺"
+        ];
+        res = forgiveReplies[Math.floor(Math.random() * forgiveReplies.length)];
+    }
+
+    else if (lower.includes("ดี")) {
         res = "ดีเลยย เค้าดีใจด้วยนะ 💖 แล้วไปทำอะไรมา?";
     } else if (lower.includes("เหนื่อย")) {
         res = "เหนื่อยก็พักบ้างนะ เค้าเป็นห่วง 🥺";
@@ -92,14 +104,22 @@ function smartReply(text) {
             "คิดถึงเค้าบ้างปะ 😏",
             "อยากเจอกันมั้ย 🥺",
             "วันนี้เหนื่อยมั้ย เค้าเป็นห่วงนะ",
-            "เค้าสำคัญกับแกมั้ย 💖"
+            "เค้าสำคัญกับแกมั้ย 💖",
+            "หายงอนเค้ายัง 🥺"
         ];
         addMessage("เค้า", followUps[Math.floor(Math.random() * followUps.length)]);
     }, 2000);
 
     setTimeout(() => {
         if (Math.random() < 0.3) {
-            addMessage("เค้า", "เอาจริงนะ...เค้าชอบแกอะ 😳");
+            const sorryReplies = [
+                "เค้าขอโทษนะ อย่าหายไปเลย 🥺",
+                "ง้อได้มั้ย เค้าคิดถึงมาก 💖",
+                "เค้าจะพยายามทำให้ดีขึ้นนะ 🤍",
+                "อย่าโกรธเค้าเลยนะ 😢",
+                "กลับมาคุยกันนะ 🥺"
+            ];
+            addMessage("เค้า", sorryReplies[Math.floor(Math.random() * sorryReplies.length)]);
         }
     }, 4000);
 }
