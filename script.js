@@ -121,21 +121,31 @@ function smartReply(text) {
     }
 
     else {
-        res = randomPick([
-            "หืมมม 😳 เล่าอีกหน่อยน้าา",
+        const randomReplies = [
+            "หืมมม 😳 เล่าอีกหน่อยดิ",
             "เค้าฟังอยู่นะ 😊",
+            "จริงดิ 😯",
+            "อยากรู้มากกว่านี้ 🥺",
+            "แกน่ารักจัง 💖"
             "เริ่ดเลยนะ 😯",
-            "จุ้บม๊วฟฟ 🫣"
-        ]); 
+            "จุ้บม๊วฟฟ 🫣"                                                                                                                                                          "งั่มๆ 🫣"
+        ]; 
+    res = randomReplies[Math.floor(Math.random() * randomReplies.length)];
     }
 
     addMessage("เค้า", res);
 
     setTimeout(() => {
-        addMessage("เค้า", randomPick([
-            "แกทำอารายอยู่อ่ะ 🫣",
-            "คิดถึงเค้ามั้ยย 🤍",
-            "น่ารักจางงเยยย 🥺"
-        ]));
+        const followUps = [
+            "แกทำอารายอยู่อ่ะ :face_with_peeking_eye:",
+            "คิดถึงเค้ามั้ยย :white_heart:",
+            "น่ารักจางงเยยย :pleading_face:"
+        ];
+        addMessage("เค้า", followUps[Math.floor(Math.random() * followUps.length)]);
     }, 5000);
-}
+
+    setTimeout(() => {
+        if (Math.random() < 0.3) {
+            addMessage("เค้า", "เอาจริงนะ...เค้าชอบแกอะ :flushed:");
+        }
+    }, 5000);
