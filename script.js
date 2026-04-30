@@ -83,43 +83,71 @@ function smartReply(text) {
 
     else if (lower.includes("ทำอะไร")) {
         res = "กำลังคิดถึงแกอยู่นี่แหละ 😆";
-    }
+       }
 
+    else if (lower.includes("เหนื่อย")) {
+        res = "เหนื่อยก็พักบ้างนะ เค้าเป็นห่วง 🥺";
+    }
+    else if (lower.includes("ดี")) {
+        res = "ดีเลยย เค้าดีใจด้วยนะ 💖";
+    }
+    else if (lower.includes("คิดถึง")) {
+        res = "เค้าก็คิดถึงแกเหมือนกันนะ 😳💖";
+
+    else if (lower.includes("ไม่บอก")) {
+        res = "บอกเค้าหน่อยยน้าค้าบบ 🥺";
+    }
+else if (lower.includes("ไม่")) {
+        res = "ทำไมม เป็นอารายมั้ยหนะ 🥹";
+    }
+    else if (lower.includes("ไม่รู้")) {
+        res = "แงง รู้หน่อยน้าา 🥺";
+    }
+    else if (lower.includes("หิว")) {
+        res = "หาอะไรหม่ำๆได้แย้ววเจ้าหนูน้อย (กิน)";
+    }
+    else if (lower.includes("กิน")) {
+        res = "หม่ำเยอะๆน้า ร่างกายจะได้แข็งแรง (แข็งแรง)";
+    }
+    else if (lower.includes("อร่อย")) {
+        res = "เค้าขอกินด้วยได้มั้ย 😋";
+    }
+    else if (lower.includes("ง่วง")) {
+        res = "อยากนอนมั้ยค้าบบ (ราตรีสวัสดิ์)";
+    }
+    else if (lower.includes("นอน")) {
+        res = "อะเชค้าบ ฝันดีน้าา (หลับสบาย) ";
+    }
+    else if (lower.includes("ตื่น")) {
+        res = "ขอให้เป็นวันที่ดีนะ (ตื่น)";
+    }
+    else if (lower.includes("รัก")) {
+        res = "เขินเลย 😳 เค้าก็รักแกนะ";
+    }
     else {
         const randomReplies = [
-            "หืมมม 😳 เล่าอีกหน่อยดิ",
+            "หืมมม 😳 เล่าอีกหน่อยน้าา,
             "เค้าฟังอยู่นะ 😊",
-            "จริงดิ 😯",
-            "อยากรู้มากกว่านี้ 🥺",
-            "แกน่ารักจัง 💖"
+            "โอ้ยยงั่มๆนะ 😯"
         ];
-        res = randomReplies[Math.floor(Math.random() * randomReplies.length)];
+        res = randomPick(randomReplies);
     }
 
     addMessage("เค้า", res);
 
+    // follow up
     setTimeout(() => {
         const followUps = [
-            "แล้ววันนี้มีอะไรทำให้ยิ้มบ้างมั้ย 😊",
-            "คิดถึงเค้าบ้างปะ 🤍",
-            "อยากเจอกันมั้ย 🥺",
-            "วันนี้เหนื่อยมั้ย เค้าเป็นห่วงนะ",
-            "เค้าสำคัญกับแกมั้ย 💖",
-            "หายงอนเค้ายัง 🥺"
+            "แกทำอารายอยู่อ่ะ 🫣",
+            "คิดถึงเค้ามั้ยย🤍",
+            "น่ารักจางงเยยย 🥺"
         ];
-        addMessage("เค้า", followUps[Math.floor(Math.random() * followUps.length)]);
-    }, 2000);
-
-    setTimeout(() => {
-        if (Math.random() < 0.3) {
-            const sorryReplies = [
-                "เค้าขอโทษนะ อย่าหายไปเลย 🥺",
-                "ง้อได้มั้ย เค้าคิดถึงมาก 💖",
-                "เค้าจะพยายามทำให้ดีขึ้นนะ 🤍",
-                "อย่าโกรธเค้าเลยนะ 😢",
-                "กลับมาคุยกันนะ 🥺"
-            ];
-            addMessage("เค้า", sorryReplies[Math.floor(Math.random() * sorryReplies.length)]);
-        }
-    }, 4000);
+        addMessage("เค้า", randomPick(followUps));
+    }, 10000);
 }
+
+// helper
+function randomPick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+</scrip
