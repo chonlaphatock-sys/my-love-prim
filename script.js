@@ -83,7 +83,7 @@ function smartReply(text) {
     }
 
     else if (lower.includes("เรียน") || lower.includes("งาน")) {
-        res = "สู้ ๆ นะ เก่งมาก 💪";
+        res = "สู้ๆนะ เก่งมากเยยตัวเล็ก 💪";
     }
 
     else if (lower.includes("ง่วง")) {
@@ -126,8 +126,8 @@ function smartReply(text) {
         res = randomPick([
             "หืมมม 😳 เล่าอีกหน่อยน้าา",
             "เค้าฟังอยู่นะ 😊",
-            "จริงดิ 😯",
-            "แล้วต่อยังไงง 🫣"
+            "เริ่ดเลยนะ 😯",
+            "จุ้บม๊วฟฟ 🫣"
         ]);
     }
 
