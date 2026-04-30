@@ -56,7 +56,7 @@ function smartReply(text) {
 }
 
     else if (lower.includes("เศร้า") || lower.includes("แย่")) {
-        res = "โอ๋ ๆ นะ มากอดที 🤍 เค้าอยู่ตรงนี้นะ";
+        res = "โอ๋ๆนะ มากอดที 🤍 เค้าอยู่ตรงนี้นะ";
     }
 
     else if (lower.includes("เหนื่อย")) {
