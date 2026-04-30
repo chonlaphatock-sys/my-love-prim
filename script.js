@@ -47,7 +47,7 @@ function smartReply(text) {
     let lower = text.toLowerCase();
     let res = "";
 
-    if (/งอน|โกรธ|ไม่คุย/.test(lower)) {
+    if (lower.includes("งอน") || lower.includes("โกรธ") || lower.includes("ไม่คุย")) {
         res = randomPick([
             "โอ๋ๆนะ ดีกานน้า 🥺",
             "เค้าขอโทษนะ ง้อได้มั้ย 💖",
@@ -56,7 +56,7 @@ function smartReply(text) {
     }
 
     else if (lower.includes("เศร้า") || lower.includes("แย่")) {
-        res = "โอ๋ๆนะ มากอดที 🤍 เค้าอยู่ตรงนี้นะ";
+        res = "โอ๋ ๆ นะ มากอดที 🤍 เค้าอยู่ตรงนี้นะ";
     }
 
     else if (lower.includes("เหนื่อย")) {
@@ -83,7 +83,7 @@ function smartReply(text) {
     }
 
     else if (lower.includes("เรียน") || lower.includes("งาน")) {
-        res = "สู้ๆนะ เก่งมากเยยตัวเล็ก 💪";
+        res = "สู้ ๆ นะ เก่งมาก 💪";
     }
 
     else if (lower.includes("ง่วง")) {
@@ -123,31 +123,21 @@ function smartReply(text) {
     }
 
     else {
-        const randomReplies = [
-            "หืมมม 😳 เล่าอีกหน่อยดิ",
+        res = randomPick([
+            "หืมมม 😳 เล่าอีกหน่อยน้าา",
             "เค้าฟังอยู่นะ 😊",
             "จริงดิ 😯",
-            "อยากรู้มากกว่านี้ 🥺",
-            "แกน่ารักจัง 💖"
-            "เริ่ดเลยนะ 😯",
-            "จุ้บม๊วฟฟ 🫣"                                                                                                                                                          "งั่มๆ 🫣"
-        ]; 
-    res = randomReplies[Math.floor(Math.random() * randomReplies.length)];
+            "แล้วต่อยังไงง 🫣"
+        ]);
     }
 
     addMessage("เค้า", res);
 
     setTimeout(() => {
-        const followUps = [
-            "แกทำอารายอยู่อ่ะ :face_with_peeking_eye:",
-            "คิดถึงเค้ามั้ยย :white_heart:",
-            "น่ารักจางงเยยย :pleading_face:"
-        ];
-        addMessage("เค้า", followUps[Math.floor(Math.random() * followUps.length)]);
-    }, 5000);
-
-    setTimeout(() => {
-        if (Math.random() < 0.3) {
-            addMessage("เค้า", "เอาจริงนะ...เค้าชอบแกอะ :flushed:");
-        }
-    }, 5000);
+        addMessage("เค้า", randomPick([
+            "แกทำอารายอยู่อ่ะ 🫣",
+            "คิดถึงเค้ามั้ยย 🤍",
+            "น่ารักจางงเยยย 🥺"
+        ]));
+    }, 15000);
+}
