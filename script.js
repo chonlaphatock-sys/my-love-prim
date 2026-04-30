@@ -47,12 +47,10 @@ function smartReply(text) {
     let lower = text.toLowerCase();
     let res = "";
 
-    if (lower.match(/งอน|โกรธ|ไม่คุย/)) {
-    res = randomPick([
-        "โอ๋ๆนะ ดีกานน้า 🥺",
+          if (lower.includes(/งอน|โกรธ|ไม่คุย/)) {
+        res =  "โอ๋ๆนะ ดีกานน้า 🥺",
         "เค้าขอโทษนะ ง้อได้มั้ย 💖",
-        "แงง เสียจายเค้าผิดไปแย้ว🤍"
-    ]);
+        "แงง เสียจายเค้าผิดไปแย้ว🤍";
 }
 
     else if (lower.includes("เศร้า") || lower.includes("แย่")) {
